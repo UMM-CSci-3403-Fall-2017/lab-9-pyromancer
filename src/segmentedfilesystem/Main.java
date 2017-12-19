@@ -6,16 +6,12 @@ import java.util.*;
 public class Main {
     
     public static void main(String[] args) throws IOException {
-        if (args.length != 1) {
-      		System.out.println("Host Name?");
-      		return;
-    	}	
-        
+   
         //set up socket for the datagrams
         //set up buffer and address.
 	DatagramSocket socketServe = new DatagramSocket();
     byte[] buffer = new byte[1028];
-    InetAddress address = InetAddress.getByName(args[0]);
+    InetAddress address = InetAddress.getByName("146.57.33.55");
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length, address, 6014);
     socketServe.send(packet);
     
